@@ -1,0 +1,64 @@
+while (!list.containsAll(StringList))
+			{
+				for (int x=0; x<allCourses.size();x++)
+				{
+					for (int z=0; z<allCourses.get(x).preReqs.size(); z++)
+					{
+						prereqlist.add(allCourses.get(x).preReqs.get(z).getCourse());
+					}
+					
+					if (prereqlist.equals(list))
+					{
+						list.add(allCourses.get(x).getCourse());
+					}
+				}
+			}
+
+
+
+/*First add all courses with no prereqs to the previous courses list
+			for (int b=0; b<allCourses.size(); b++)
+			{
+				if (allCourses.get(b).preReqs.size()==0)
+					list.add(allCourses.get(b).getCourse());
+			}*/
+
+
+ArrayList<String> aha = new ArrayList<String>();
+				ArrayList<String> baha = new ArrayList<String>();
+				
+				//Add this node to the total array.
+				aha.add(a.getCourse());
+				c.add(aha);
+				
+				//Add all of its connections to one array.
+				for (int i=0; i<a.preReqs.size(); i++)
+				{
+					baha.add(LevelMaker(a.preReqs.get(i),c));
+				}
+				
+				//Add that array to the main array
+
+
+if (a.connection.isEmpty())
+			{
+				returnman.add(a.getCourse());
+				return returnman;
+			}
+			
+			//Else, Add this node to the overall array
+			thisman.add(a.getCourse());
+			c.add(thisman);
+
+			return LevelMaker()
+			//Next, add this node's children to the array
+			for (int i=0; i<a.preReqs.size(); i++)
+			{
+				returnman.add(LevelMaker(a.connection.get(i), c));
+			}
+			
+			c.add(returnman);
+
+ArrayList<String> returnman = new ArrayList<String>();
+			ArrayList<String> thisman = new ArrayList<String>();
+			
